@@ -45,7 +45,7 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2018
 
   # Icon between year and copyright info.
   icon: user
@@ -94,8 +94,8 @@ index_with_subtitle: false
 menu:
   home: / || home
   #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
@@ -111,9 +111,9 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 #scheme: Gemini
 
 
@@ -126,8 +126,10 @@ scheme: Muse
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
+social:
+  GitHub: https://github.com/NoNeil || github
+  微博: https://weibo.com/drneil || weibo
+
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -140,8 +142,10 @@ scheme: Muse
 
 social_icons:
   enable: true
-  icons_only: false
-  transition: false
+  #icons_only: false
+  #transition: false
+  GitHub: github
+  微博: weibo
 
 # Blog rolls
 links_icon: link
@@ -208,7 +212,7 @@ sidebar:
 scroll_to_more: true
 
 # Automatically saving scroll position on each post/page in cookies.
-save_scroll: false
+save_scroll: true
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
@@ -216,8 +220,8 @@ excerpt_description: true
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: false
-  length: 150
+  enable: true
+  length: 200
 
 # Post meta display settings
 post_meta:
@@ -277,7 +281,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night eighties
 
 
 # ---------------------------------------------------------------
@@ -293,47 +297,36 @@ highlight_theme: normal
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
-  # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
+  # 外链字体库地址，例如 //fonts.googleapis.com (默认值)
   host:
 
-  # Font options:
-  # `external: true` will load this font family from `host` above.
-  # `family: Times New Roman`. Without any quotes.
-  # `size: xx`. Use `px` as unit.
-
-  # Global font settings used on <body> element.
+  # 全局字体，应用在 body 元素上
   global:
     external: true
-    family: Lato
-    size:
+    family: Monda
 
-  # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
-  # Fallback to `global` font settings.
+  # 标题字体 (h1, h2, h3, h4, h5, h6)
   headings:
     external: true
-    family:
-    size:
+    family: Roboto Slab
 
-  # Font settings for posts.
-  # Fallback to `global` font settings.
+  # 文章字体
   posts:
     external: true
     family:
 
-  # Font settings for Logo.
-  # Fallback to `global` font settings.
+  # Logo 字体
   logo:
     external: true
-    family:
-    size:
+    family: Lobster Two
+    size: 24
 
-  # Font settings for <code> and code blocks.
+  # 代码字体，应用于 code 以及代码块
   codes:
     external: true
-    family:
-    size:
+    family: PT Mono
 
 
 # ---------------------------------------------------------------
@@ -342,7 +335,7 @@ font:
 
 # MathJax Support
 mathjax:
-  enable: false
+  enable: true
   per_page: false
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
@@ -360,8 +353,8 @@ han: false
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: neilxu
   count: true
 
 # Hypercomments
@@ -591,6 +584,13 @@ calendar:
   singleEvents: true
   maxResults: 250
 
+# Search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
 # Algolia Search
 algolia_search:
   enable: false
@@ -604,7 +604,7 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/flashlab/hexo-generator-search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
